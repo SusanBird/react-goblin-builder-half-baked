@@ -18,4 +18,3 @@ export default function GoblinList({ allGoblins, handleDeleteGoblin }) {
 }
 
 
-//unsure if should be using name= instead of goblinFormName= , etc.
