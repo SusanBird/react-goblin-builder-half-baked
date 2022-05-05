@@ -24,15 +24,16 @@ function App() {
     
     // on submit, make a new goblin object with a name that comes from the form state, an hp that comes from the form state, and a color that comes from the form state
     const goblin = {
-      goblinFormName, 
-      goblinFormHP,
-      goblinFormColor
+      name:goblinFormName, 
+      hp:goblinFormHP,
+      color:goblinFormColor
     };
 
     // update the allGoblins array. Add the new goblin to the allGoblins array immutably.
-    // allGoblins.push(goblinObj);?
+    // const updatedGoblins = [...allGoblins, goblin];
+
     setAllGoblins([...allGoblins, goblin]);
-    
+    // console.log(updatedGoblins);
     // clear out the goblin form state items by setting them to empty strings. This will cause the form to reset in the UI.
     setGoblinFormName('');
     setGoblinFormHP('');
@@ -52,7 +53,7 @@ function App() {
     // use the filter method to get an array of goblins whose name includes this search argument
     if (search) {
       const matchingGoblins = allGoblins
-        .filter(allGoblins => goblin.name.toLowerCase()
+        .filter(goblin => goblin.name.toLowerCase()
           .includes(search.toLowerCase()
           )
         );
@@ -68,14 +69,14 @@ function App() {
   return (
     <div className="App">
       <div className='current-goblin quarter'>
-        <Goblin goblin={{
+        <Goblin handleDeleteGoblin={handleDeleteGoblin} goblin={{
           /* 
             use the goblin form state to make a goblin object and to display it. 
             This will let the user see the current form state 
           */
-          name={goblinFormName}
-          HP={goblinFormHP}
-          color={goblinFormColor}
+          name:goblinFormName,
+          hp:goblinFormHP,
+          color:goblinFormColor
         }}/>
       </div>
       <div className='goblin-filter quarter'>
@@ -104,7 +105,7 @@ function App() {
         */
       />
       <GoblinList 
-        goblins={
+        allGoblins={
           filteredGoblins.length
             ? filteredGoblins
             : allGoblins

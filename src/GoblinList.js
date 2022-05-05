@@ -7,11 +7,9 @@ export default function GoblinList({ allGoblins, handleDeleteGoblin }) {
       {/* map over your goblins and render out a Goblin component for each goblin. You've seen this before. The only difference here is that you need to pass handleDeleteGoblin (a prop that is a function), as well */}
       {
         allGoblins.map((goblin, i) => <Goblin
-          key={`${goblin.name}-${goblin.HP}-${i}`}
-          goblinFormName={goblin.name}
-          goblinFormHP={goblin.HP}
-          goblinFormColor={goblin.color}
+          key={`${goblin.name}-${goblin.hp}-${i}`}
           handleDeleteGoblin={handleDeleteGoblin}
+          goblin={goblin}
         />
         )
       }
