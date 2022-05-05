@@ -71,6 +71,13 @@ function App() {
         <input onChange={(e) => handleFilterGoblins(e.target.value)} />
       </div>
       <GoblinForm 
+        submitGoblin={submitGoblin}
+        goblinFormName={goblinFormName}
+        setGoblinFormName={setGoblinFormName}
+        goblinFormColor={goblinFormColor}
+        setGoblinFormColor={setGoblinFormColor}
+        goblinFormHP={goblinFormHP} 
+        setGoblinFormHP={setGoblinFormHP}
         /*
         This component takes in a ton of props! 
         Here is the list of props to pass:
