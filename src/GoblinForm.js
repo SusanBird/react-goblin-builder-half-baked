@@ -1,6 +1,12 @@
 import React from 'react';
 
-export default function GoblinForm({ submitGoblin, setGoblinFormName, setGoblinFormHP, setGoblinFormColor }) {
+export default function GoblinForm({ 
+  submitGoblin, 
+  setGoblinFormName, 
+  setGoblinFormHP, 
+  setGoblinFormColor 
+}) {
+  
   return (
     <div className='goblin-form-container quarter'>
       <form onSubmit={submitGoblin} />

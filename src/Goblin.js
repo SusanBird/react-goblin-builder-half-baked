@@ -15,3 +15,4 @@ export default function Goblin({ filteredGoblins }) {
 
 
 //not sure I passed the right props here, not sure at all.... what makes this different from the movie one? hmm....
+//like, why can't I just pass individual color, name props to Goblin()? Where do those come from anyways on MovieItem?
