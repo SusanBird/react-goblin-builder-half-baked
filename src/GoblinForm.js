@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function GoblinForm({ 
   submitGoblin, 
-  setGoblinFormName, 
-  setGoblinFormHP, 
-  setGoblinFormColor 
+  setGoblinFormName, goblinFormName,
+  setGoblinFormHP, goblinFormHP,
+  setGoblinFormColor, goblinFormColor 
 }) {
   
   return (
@@ -17,19 +17,19 @@ export default function GoblinForm({
         <label>
             Name
           {/* onChange, use the prop setGoblinFormName to set the parent state */}
-          <input required value={submitGoblin.goblinFormName} onChange={e => setGoblinFormName(e.target.value)} />
+          <input required value={goblinFormName} onChange={e => setGoblinFormName(e.target.value)} />
           {/* note that we're controlling the input's value from parent state */}
         </label>
         <label>
             HP
           {/* onChange, use the prop setGoblinFormHP to set the parent state */}
-          <input required type="number" value={submitGoblin.goblinFormHP} onChange={e => setGoblinFormHP(e.target.value)} />
+          <input required type="number" value={goblinFormHP} onChange={e => setGoblinFormHP(e.target.value)} />
           {/* note that we're controlling the input's value from parent state */}
         </label>
         <label>
             Color
           {/* onChange, use the prop setGoblinFormColor to set the parent state */}
-          <select required value={submitGoblin.goblinFormColor} onChange={e => setGoblinFormColor(e.target.value)}>
+          <select required value={goblinFormColor} onChange={e => setGoblinFormColor(e.target.value)}>
             {/* note that we're controlling the input's value from parent state */}
             <option value="lightgreen">Green</option>
             <option value="lightblue">Blue</option>
